@@ -12,6 +12,11 @@ export class ProductPage {
     readonly cartBadge: Locator;
     readonly removeButtons: Locator;
     readonly cartIcon : Locator;
+   readonly menuButton: Locator;
+    readonly logoutLink: Locator;
+    readonly aboutLink: Locator;
+    readonly resetAppStateLink: Locator;
+    readonly closeMenuButton: Locator;
 
 
     constructor(private page: Page) {
@@ -24,6 +29,11 @@ export class ProductPage {
         this.cartBadge = this.page.locator('.shopping_cart_badge');
         this.removeButtons = page.locator('button[data-test^="remove"]');
         this.cartIcon =  page.locator('[data-test="shopping-cart-link"]');
+        this.menuButton = page.locator('#react-burger-menu-btn');
+        this.logoutLink = page.locator('#logout_sidebar_link');
+        this.aboutLink = page.locator('#about_sidebar_link');
+        this.resetAppStateLink = page.locator('#reset_sidebar_link');
+        this.closeMenuButton = page.locator('#react-burger-cross-btn');
 
     }
 
@@ -57,4 +67,26 @@ export class ProductPage {
         await this.cartIcon.click();
     }
 
+    async openMenu() {
+    await this.menuButton.click();
+    }
+
+    async logout() {
+        await this.openMenu();
+        await this.logoutLink.click();
+    }
+
+    async clickAbout() {
+        await this.openMenu();
+        await this.aboutLink.click();
+    }
+
+    async resetAppState() {
+        await this.openMenu();
+        await this.resetAppStateLink.click();
+    }
+
+    async closeMenu() {
+        await this.closeMenuButton.click();
+    }
 }

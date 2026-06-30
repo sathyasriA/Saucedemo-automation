@@ -28,8 +28,4 @@ export class LoginPage {
         await this.loginButton.click();
     }
 
-    async logout() {
-        await this.menuButton.click();
-        await this.logoutLink.click();
-    }
 }

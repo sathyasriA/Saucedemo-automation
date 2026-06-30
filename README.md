@@ -76,6 +76,8 @@ The automation suite includes:
 - Add single product
 - Add multiple products
 - Remove product
+- Verify reset app state
+- verify about link
 
 ### Cart
 - Verify selected products

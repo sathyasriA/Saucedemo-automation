@@ -114,3 +114,4 @@ test('TC_10 - Remove a product from inventory and verify badge count decreases',
     await expect(cartPage.cartItems).toHaveCount(2);
 
 });
+
